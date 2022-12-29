@@ -36,7 +36,14 @@ export default function GameComponent(props: GameComponentProps) {
         setFirstEntryType("capital");
       }
     }
+
+    if (firstEntry && entry === firstEntry) {
+      setFirstEntry("");
+      setFirstEntryType(undefined);
+    }
+
     if (firstEntry && !secondEntry) {
+      if (entry === firstEntry) return;
       setSecondEntry(entry);
     }
 
